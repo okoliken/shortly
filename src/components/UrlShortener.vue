@@ -1,3 +1,27 @@
+<script>
+export default {
+  name: "UrlShortener",
+  data: () => {
+    return {
+      shortenUrlLinks: "",
+      isEmpty: false,
+    };
+  },
+  methods: {
+    getUrlLinksFromSearchInput() {
+      if (this.shortenUrlLinks === "") {
+        this.isEmpty = true;
+        setTimeout(() => {
+          this.isEmpty = false;
+        }, 2000);
+      } else {
+        console.log(this.shortenUrlLinks);
+      }
+    },
+  },
+};
+</script>
+
 <template>
   <div class="center-url-con">
     <div class="url-shortener-container">
@@ -25,30 +49,6 @@
     />
   </div>
 </template>
-
-<script>
-export default {
-  name: "UrlShortener",
-  data: () => {
-    return {
-      shortenUrlLinks: "",
-      isEmpty: false,
-    };
-  },
-  methods: {
-    getUrlLinksFromSearchInput() {
-      if (this.shortenUrlLinks === "") {
-        this.isEmpty = true;
-        setTimeout(() => {
-          this.isEmpty = false;
-        }, 2000);
-      } else {
-        console.log(this.shortenUrlLinks);
-      }
-    },
-  },
-};
-</script>
 
 <style scoped>
 .slide-in-enter-active,
