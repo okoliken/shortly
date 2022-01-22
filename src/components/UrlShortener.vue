@@ -78,6 +78,7 @@ span.red-error-text {
   position: relative;
   overflow: hidden;
   position: relative;
+  transform: translateY(70px);
   margin: 68px 20px 0 20px;
   height: auto;
   justify-content: center;
@@ -139,6 +140,7 @@ span.red-error-text {
   .center-url-con {
     display: flex;
     padding: 30px;
+    transform: translateY(90px);
     margin: 68px 40px;
   }
   .url-shortener-form {

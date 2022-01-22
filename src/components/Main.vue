@@ -44,7 +44,7 @@ export default {
 .container {
   background-color: #f0f1f6;
   height: 250vh;
-  transform: translateY(-80px);
+  /* transform: translateY(-80px); */
   position: relative;
   z-index: -1;
 
@@ -87,7 +87,7 @@ export default {
   z-index: -1;
 }
 .boost-section {
-  transform: translateY(-80px);
+  /* transform: translateY(-80px); */
   height: 300px;
   position: relative;
   background-color: hsl(257, 27%, 26%);
@@ -135,7 +135,7 @@ export default {
 }
 @media (min-width: 920px) {
   .container {
-    height: 130vh;
+    height: 170vh;
   }
   .card-container {
     display: grid;

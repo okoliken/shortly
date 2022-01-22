@@ -11,7 +11,7 @@
       </p>
     </div>
   </div>
-  <div class="card">
+  <div class="card step2">
     <div class="icon-circle">
       <img src="../assets/images/icon-detailed-records.svg" alt="" />
     </div>
@@ -23,7 +23,7 @@
       </p>
     </div>
   </div>
-  <div class="card">
+  <div class="card step3">
     <div class="icon-circle">
       <img src="../assets/images/icon-fully-customizable.svg" alt="" />
     </div>
@@ -85,6 +85,15 @@ export default {
 @media (min-width: 920px) {
   .card-body {
     padding: 25px;
+  }
+  .step2 {
+    transform: translateY(30px);
+    transition: all 0.1s ease;
+  }
+  .step3 {
+    transition: all 0.1s ease;
+
+    transform: translateY(50px);
   }
 }
 </style>
