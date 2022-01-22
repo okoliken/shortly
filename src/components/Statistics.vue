@@ -71,15 +71,20 @@ export default {
   flex-direction: column;
   text-align: center;
   padding: 30px;
-  margin-top: -8px;
+  margin-top: -18px;
 }
 .card .card-body h1 {
-  font-size: 30px;
+  font-size: 25px;
   color: hsl(260, 8%, 14%);
   margin-bottom: 15px;
 }
 .card .card-body p {
   font-size: 17px;
   color: hsl(257, 7%, 63%);
+}
+@media (min-width: 920px) {
+  .card-body {
+    padding: 25px;
+  }
 }
 </style>

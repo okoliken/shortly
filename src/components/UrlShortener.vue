@@ -78,7 +78,7 @@ span.red-error-text {
   position: relative;
   overflow: hidden;
   position: relative;
-  margin: 68px 10px 0 10px;
+  margin: 68px 20px 0 20px;
   height: auto;
   justify-content: center;
   border-radius: 10px;
@@ -96,9 +96,11 @@ span.red-error-text {
 }
 .url-shortener-form {
   z-index: 10;
+  width: 100%;
+  transform: translateY(-4px);
 }
 .url-shortener-form input {
-  width: 300px;
+  width: 100%;
   padding: 14px;
   box-sizing: border-box;
   appearance: none;
@@ -110,7 +112,7 @@ span.red-error-text {
 }
 .url-shortener-form a {
   display: block;
-  width: 300px;
+  width: 100%;
   padding: 10px 12px;
   text-align: center;
   color: #fff;
