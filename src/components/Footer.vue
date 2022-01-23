@@ -50,7 +50,7 @@ export default {};
 .footer-shortly {
   background: #232027;
   padding: 30px;
-  height: 110vh;
+  /* height: 110vh; */
   text-align: center;
 }
 .footer-shortly .f-logo {
@@ -59,7 +59,7 @@ export default {};
 .footer-shortly .f-logo .logo {
   color: #fff;
   font-weight: 700;
-  font-size: 45px;
+  font-size: 30px;
 }
 .footer-shortly .features,
 .Resources,

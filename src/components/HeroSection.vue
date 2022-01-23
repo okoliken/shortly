@@ -19,10 +19,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .hero-section {
   display: flex;

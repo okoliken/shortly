@@ -70,7 +70,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding: 30px;
+  padding: 26px;
   margin-top: -18px;
 }
 .card .card-body h1 {
