@@ -1,6 +1,35 @@
 <template>
   <main class="container">
-    <ShortenedUrlVue />
+    <div v-if="shortenedLink">
+      <ShortenedUrlVue>
+        <div class="raw-url">
+          <h2 class="users-url">{{ shortenedLink.result.original_link }}</h2>
+        </div>
+        <div class="shortened-con">
+          <p class="shortened-url">{{ shortenedLink.result.short_link2 }}</p>
+          <button type="button" class="copy-link-btn">Copy</button>
+        </div>
+      </ShortenedUrlVue>
+      <ShortenedUrlVue>
+        <div class="raw-url">
+          <h2 class="users-url">{{ shortenedLink.result.original_link }}</h2>
+        </div>
+        <div class="shortened-con">
+          <p class="shortened-url">{{ shortenedLink.result.short_link3 }}</p>
+          <button type="button" class="copy-link-btn">Copy</button>
+        </div>
+      </ShortenedUrlVue>
+      <ShortenedUrlVue>
+        <div class="raw-url">
+          <h2 class="users-url">{{ shortenedLink.result.original_link }}</h2>
+        </div>
+        <div class="shortened-con">
+          <p class="shortened-url">{{ shortenedLink.result.short_link }}</p>
+          <button type="button" class="copy-link-btn">Copy</button>
+        </div>
+      </ShortenedUrlVue>
+    </div>
+
     <div class="container_statistics">
       <h1>Advanced Statistics</h1>
       <p>
@@ -39,6 +68,9 @@ export default {
   data() {
     return {};
   },
+  props: {
+    shortenedLink: Object,
+  },
 };
 </script>
 
@@ -52,6 +84,36 @@ export default {
 
   padding: 10px;
 }
+.shortened-urls .users-url {
+  font-size: 14px;
+  font-weight: 520;
+  word-wrap: break-word;
+}
+.shortened-urls .raw-url {
+  color: hsl(257, 27%, 26%);
+  padding: 10px;
+  border-bottom: 0.8px solid hsl(257, 7%, 63%);
+}
+.shortened-con {
+  padding: 10px;
+}
+.shortened-con .shortened-url {
+  color: hsl(180, 66%, 49%);
+  margin-bottom: 10px;
+}
+.shortened-con button.copy-link-btn {
+  padding: 12px 30px;
+  border: none;
+  color: #fff;
+  outline: none;
+  appearance: none;
+  width: 100%;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: hsl(180, 66%, 49%);
+}
+
 .container_statistics {
   text-align: center;
   transform: translateY(190px);
@@ -136,6 +198,22 @@ export default {
   .cyan-rule {
     display: none;
   }
+  .shortened-urls .raw-url {
+    border-bottom: none;
+    font-size: 20px;
+  }
+
+  .shortened-urls .users-url {
+    font-size: 20px;
+  }
+  .shortened-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .shortened-con .shortened-url {
+    margin-bottom: none;
+  }
 }
 @media (min-width: 920px) {
   .container {
@@ -147,6 +225,7 @@ export default {
     gap: 20px;
     transition: display 0.1s ease-in;
     max-width: 100%;
+    margin: 38px;
   }
   .cyan-rule {
     display: block;
@@ -160,6 +239,13 @@ export default {
   .boost-section .boost-cta a {
     padding: 15px 35px;
     font-size: 20px;
+  }
+  .shortened-urls .users-url {
+    font-size: 20px;
+  }
+  .shortened-con .shortened-url {
+    font-size: 20px;
+    margin-right: 8px;
   }
 }
 </style>

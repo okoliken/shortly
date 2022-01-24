@@ -1,8 +1,8 @@
 <template>
   <Navbar />
   <HeroSectionVue />
-  <UrlShortenerVue />
-  <MainVue />
+  <UrlShortenerVue @shortlink="getShortenedLinkFromApi" />
+  <MainVue :shortenedLink="shortenedLink" />
 </template>
 
 <script>
@@ -18,6 +18,26 @@ export default {
     HeroSectionVue,
     UrlShortenerVue,
     MainVue,
+  },
+  data() {
+    return {
+      shortenedLink: null,
+    };
+  },
+  methods: {
+    async getShortenedLinkFromApi(userinput) {
+      console.log(userinput);
+      try {
+        const request = await fetch(
+          `https://api.shrtco.de/v2/shorten?url=${userinput}`
+        );
+        const data = await request.json();
+        console.log(data);
+        this.shortenedLink = data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>

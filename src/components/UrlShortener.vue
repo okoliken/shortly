@@ -5,22 +5,17 @@ export default {
     return {
       shortenUrlLinks: "",
       isEmpty: false,
-      shortenedLinks: [],
     };
   },
   methods: {
-    async getUrlLinksFromSearchInput() {
+    getUrlLinksFromSearchInput() {
       if (this.shortenUrlLinks === "") {
         this.isEmpty = true;
         setTimeout(() => {
           this.isEmpty = false;
         }, 2000);
       } else {
-        const request = await fetch(
-          ` https://api.shrtco.de/v2/shorten?url=${this.shortenUrlLinks}`
-        );
-        const data = await request.json();
-        this.shortenedLinks = data;
+        this.$emit("shortlink", this.shortenUrlLinks);
       }
     },
   },
