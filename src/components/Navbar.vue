@@ -163,6 +163,10 @@ export default {
     color: hsl(0, 0%, 75%);
     text-decoration: none;
   }
+  .url-shortner-header .desk-nav a:hover {
+    transition: color 0.1s ease-in;
+    color: #333;
+  }
   .url-shortner-header .url-shortner-logo .menu {
     display: none;
   }

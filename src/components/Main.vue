@@ -1,35 +1,22 @@
 <template>
   <main class="container">
+    <!-- CONDITIONALLY RENDER IF  shortenedLink IS AVAILABLE-->
     <div v-if="shortenedLink">
       <ShortenedUrlVue>
         <div class="raw-url">
           <h2 class="users-url">{{ shortenedLink.result.original_link }}</h2>
         </div>
         <div class="shortened-con">
-          <p class="shortened-url">{{ shortenedLink.result.short_link2 }}</p>
-          <button type="button" class="copy-link-btn">Copy</button>
-        </div>
-      </ShortenedUrlVue>
-      <ShortenedUrlVue>
-        <div class="raw-url">
-          <h2 class="users-url">{{ shortenedLink.result.original_link }}</h2>
-        </div>
-        <div class="shortened-con">
-          <p class="shortened-url">{{ shortenedLink.result.short_link3 }}</p>
-          <button type="button" class="copy-link-btn">Copy</button>
-        </div>
-      </ShortenedUrlVue>
-      <ShortenedUrlVue>
-        <div class="raw-url">
-          <h2 class="users-url">{{ shortenedLink.result.original_link }}</h2>
-        </div>
-        <div class="shortened-con">
-          <p class="shortened-url">{{ shortenedLink.result.short_link }}</p>
-          <button type="button" class="copy-link-btn">Copy</button>
+          <p class="shortened-url" id="txt_copy">
+            {{ shortenedLink.result.short_link2 }}
+          </p>
+          <button @click="copyText()" type="button" class="copy-link-btn">
+            Copy
+          </button>
         </div>
       </ShortenedUrlVue>
     </div>
-
+    <!-- END -->
     <div class="container_statistics">
       <h1>Advanced Statistics</h1>
       <p>
@@ -38,7 +25,9 @@
       </p>
     </div>
     <div class="card-container">
+      <!-- STATISTIC COMPONENT -->
       <StatisticsVue />
+      <!-- END -->
     </div>
     <div class="center-rule">
       <div class="cyan-rule"></div>
@@ -52,6 +41,11 @@
     <img
       src="../assets/images/bg-boost-mobile.svg"
       class="bg-boost-mobile"
+      alt=""
+    />
+    <img
+      src="../assets/images/bg-boost-desktop.svg"
+      class="bg-boost-desktop"
       alt=""
     />
   </div>
@@ -71,13 +65,18 @@ export default {
   props: {
     shortenedLink: Object,
   },
+  methods: {
+    copyText() {
+      console.log(document.getElementById("txt_copy").innerHTML);
+    },
+  },
 };
 </script>
 
 <style scoped>
 .container {
   background-color: #f0f1f6;
-  height: 300vh;
+  height: 280vh;
   /* transform: translateY(-80px); */
   position: relative;
   z-index: -1;
@@ -163,6 +162,9 @@ export default {
   justify-content: center;
   flex-direction: column;
   padding: 5px;
+  z-index: 10;
+  width: 100%;
+  position: absolute;
   transform: translateY(100px);
 }
 .boost-section .boost-cta h2 {
@@ -180,9 +182,17 @@ export default {
 }
 .boost-section .bg-boost-mobile {
   position: absolute;
-  z-index: -1;
+  /* z-index: -1; */
   right: 0;
   top: 0;
+}
+.boost-section .bg-boost-desktop {
+  display: none;
+}
+@media (min-width: 370px) {
+  .container {
+    height: 300vh;
+  }
 }
 @media (min-width: 720px) {
   .container {
@@ -217,7 +227,7 @@ export default {
 }
 @media (min-width: 920px) {
   .container {
-    height: 170vh;
+    height: 150vh;
   }
   .card-container {
     display: grid;
@@ -233,6 +243,17 @@ export default {
     transform: rotate(270deg);
     z-index: -1;
   }
+  .boost-section .bg-boost-mobile {
+    display: none;
+  }
+  .boost-section {
+    position: relative;
+  }
+  .boost-cta {
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+  }
   .boost-section .boost-cta h2 {
     font-size: 35px;
   }
@@ -246,6 +267,13 @@ export default {
   .shortened-con .shortened-url {
     font-size: 20px;
     margin-right: 8px;
+  }
+  .boost-section .bg-boost-desktop {
+    position: absolute;
+    display: block;
+    /* z-index: -1; */
+    right: 0;
+    top: 16%;
   }
 }
 </style>

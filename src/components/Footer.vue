@@ -90,7 +90,7 @@ export default {};
   width: 30px;
   margin-left: 10px;
 }
-@media (min-width: 1120px) {
+@media (min-width: 1024px) {
   .footer-shortly .f-logo {
     margin-bottom: 0;
   }
